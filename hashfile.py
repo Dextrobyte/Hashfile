@@ -30,7 +30,9 @@ buffer_size = 65536
 
 import hashlib
 import sys
+import time
 
+startTime = time.time()
 filePath = None
 try:
 	filePath = sys.argv[1]
@@ -68,3 +70,5 @@ sha512hash = sha_512.hexdigest()
 md5hash    =    md_5.hexdigest()
 
 print(f"SHA256: {sha256hash}\nSHA512: {sha512hash}\nMD5: {md5hash}\n")
+endTime = time.time()
+print(f"Time taken: {endTime-startTime}\n")
