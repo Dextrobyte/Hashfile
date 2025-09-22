@@ -9,4 +9,8 @@ A python script to calculate sha256,sha512,md5 hash of a file
    ```bash
    git clone https://github.com/Dextrobyte/Hashfile.git
    cd Hashfile
-   python hashfile.py <path>
+
+-## Use
+   ```bash
+   python hashfile.py <path-to-file>
+
