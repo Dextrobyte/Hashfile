@@ -35,10 +35,10 @@ filePath = None
 try:
 	filePath = sys.argv[1]
 except IndexError:
-	print ("no file path provided")
+	print ("\033[31mNo file path provided\033[0m")
 	exit()
 except :
-	print("something isn't right try again")
+	print("\033[31mSomething isn't right try again\033[0m")
 	exit()
 sha_256 = hashlib.sha256()
 sha_512 = hashlib.sha512()
@@ -48,7 +48,10 @@ md_5 = hashlib.md5()
 try:
 	file = open(filePath, "rb")
 except FileNotFoundError:
-	print(f"file {filePath} not found try again")
+	print(f"\033[31mfile {filePath} not found try again\033[0m")
+	exit()
+except IsADirectoryError:
+	print(f"\033[31m{filePath} is a directory not a file\033[0m")
 	exit()
 while True:
 	if(not(bin)):
